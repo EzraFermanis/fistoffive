@@ -1,7 +1,9 @@
 var express = require('express')
+
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
+
 
 var votes = [];
 
@@ -32,3 +34,5 @@ io.on('connection', function (socket) {
     console.log(data);
   });
 });
+
+
