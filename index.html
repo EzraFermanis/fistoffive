@@ -27,7 +27,7 @@
     <button type="button" onClick = "execute(3)">3</button>
     <button type="button" onClick = "execute(4)">4</button>
     <button type="button" onClick = "execute(5)">5</button>
-    <div id = "result"> Results </div>
+    <div id = "result"></div>
     </div>
   </div>
   <script>
@@ -38,7 +38,7 @@
     }
      socket.on('result', function (data) {
         console.log(data);
-        $("#result").text("Average: " + data)
+        $("#result").text("Average: " + Math.round(data * 10)/10)
       });
   </script>
 </body>
