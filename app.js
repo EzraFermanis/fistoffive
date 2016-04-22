@@ -13,6 +13,9 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/index.html');
 });
 
+app.get('/admin', function (req, res) {
+  res.sendFile(__dirname + '/admin.html');
+});
 
 io.on('connection', function (socket) {
   socket.emit('news', { hello: 'world' });
