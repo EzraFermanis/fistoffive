@@ -34,11 +34,13 @@
       <div class="main">
         <div class="row">
           <div class="twelve columns">
+            <h3>How was your learning today?</h3>
             <div id="one" class="finger" onClick="execute(1)"></div>
             <div id="two" class="finger" onClick="execute(2)"></div>
             <div id="three" class="finger" onClick="execute(3)"></div>
             <div id="four" class="finger" onClick="execute(4)"></div>
             <div id="five" class="finger" onClick="execute(5)"></div>
+            <br>
             <button type="button" onClick="reset()">Reset</button>
             <div id = "votes"></div>
             <div id = "average"></div>
@@ -47,10 +49,15 @@
       </div>
   </div>
   <script>
+  var canVote = true
+
     var socket = io.connect('/');
     function execute(number){
       // console.log("we made it!", number)
-      socket.emit("vote",number)
+      if(canVote){
+        socket.emit("vote",number)
+        canVote = false
+      }
     }
      socket.on('result', function (data) {
         console.log(data.average);
