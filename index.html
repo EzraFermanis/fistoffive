@@ -24,17 +24,27 @@
 </head>
 <body>
   <div class="container">
-    <div class="twelve columns">
-    <button type="button" onClick = "execute(1)">1</button>
-    <button type="button" onClick = "execute(2)">2</button>
-    <button type="button" onClick = "execute(3)">3</button>
-    <button type="button" onClick = "execute(4)">4</button>
-    <button type="button" onClick = "execute(5)">5</button>
-    <button type="button" onClick = "execute(5)">Reset</button>
-
-    <div id = "votes"></div>
-    <div id = "average"></div>
+    <div id="title">
+      <div class="row">
+        <div class="twelve columns">
+          <h1>Fist of Five!</h1>
+        </div>
+      </div>
     </div>
+      <div class="main">
+        <div class="row">
+          <div class="twelve columns">
+            <div id="one" class="finger" onClick="execute(1)"></div>
+            <div id="two" class="finger" onClick="execute(2)"></div>
+            <div id="three" class="finger" onClick="execute(3)"></div>
+            <div id="four" class="finger" onClick="execute(4)"></div>
+            <div id="five" class="finger" onClick="execute(5)"></div>
+            <div id ="reset" onClick="reset()"></div>
+            <div id = "votes"></div>
+            <div id = "average"></div>
+          </div>
+        </div>
+      </div>
   </div>
   <script>
     var socket = io.connect('/');
@@ -47,6 +57,9 @@
         $("#votes").text("Number of votes: " + data.votes)
         $("#average").text("Average: " + data.average)
       });
+     function reset(){
+      socket.emit("reset")
+     }
   </script>
 </body>
 </html>

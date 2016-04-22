@@ -1,7 +1,53 @@
-/*#votes,#average{
+#votes,#average{
   background: #3f3f3f;
   padding: 20px;
-  height: 400px;
+  height: 5em;
   margin-top: 5%;
   max-width: 25%;
-}*/
+}
+
+.main {
+  /*background-image: url('/images/palm.png');*/
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#one {
+  background-image: url('/images/one.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5em;
+  height: 5em;
+}
+
+#two {
+  background-image: url('/images/two.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5em;
+  height: 5em;
+}
+
+#three {
+  background-image: url('/images/three.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5em;
+  height: 5em;
+}
+
+#four {
+  background-image: url('/images/four.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5em;
+  height: 5em;
+}
+
+#five {
+  background-image: url('/images/five.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 5em;
+  height: 5em;
+}
