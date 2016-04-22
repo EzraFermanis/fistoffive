@@ -30,7 +30,7 @@
     </div>
   </div>
   <script>
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect('/');
     function execute(number){
       // console.log("we made it!", number)
       socket.emit("vote",number)
