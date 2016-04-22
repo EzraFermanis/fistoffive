@@ -14,8 +14,6 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="skeleton.css">
-  <link rel="stylesheet" href="normalize.css">
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 </head>
@@ -27,7 +25,8 @@
     <button type="button" onClick = "execute(3)">3</button>
     <button type="button" onClick = "execute(4)">4</button>
     <button type="button" onClick = "execute(5)">5</button>
-    <div id = "result"></div>
+    <div id = "votes"></div>
+    <div id = "average"></div>
     </div>
   </div>
   <script>
@@ -38,7 +37,8 @@
     }
      socket.on('result', function (data) {
         console.log(data);
-        $("#result").text("Average: " + Math.round(data * 10)/10)
+        $("#votes").text("Number of votes: " + data.votes)
+        $("#average").text("Average: " + data.average)
       });
   </script>
 </body>
