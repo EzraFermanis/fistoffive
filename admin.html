@@ -45,7 +45,6 @@
       </div>
   </div>
   <script>
-  var terrible = new Audio("sounds/numbnuts.mp3")
   var okay = new Audio("sounds/Tadaah.mp3")
   var awesome = new Audio("sounds/Woohoo.mp3")
   var socket = io.connect('/');
@@ -62,16 +61,16 @@
       awesome.play()
     }
     else if(data.average >=3){
-      $("#message").text("You did okay today, could be better")
+      $("#message").text("You did okay")
       okay.play()
     }
     else if(data.average >=2){
-      $("#message").text("you kinda sucked today...")
-      terrible.play()
+      $("#message").text("Your cohort needs to learn more")
+      okay.play()
     }
     else{
-      $("#message").text("Wow, you REALLY sucked today")
-      terrible.play()
+      $("#message").text("More learning!")
+      okay.play()
     }
   });
 
