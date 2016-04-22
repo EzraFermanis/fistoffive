@@ -45,24 +45,32 @@
       </div>
   </div>
   <script>
+  var terrible = new Audio("numbnuts.mp3")
+  var okay = new Audio("Tadaah Sound Effect.mp3")
+  var awesome = new Audio("Woo hoo Sound Effect.mp3")
     socket.on('result', function (data) {
       console.log(data.average);
       $("#votes").text("Number of votes: " + data.votes)
       $("#average").text("Average: " + data.average)
       if(data.average == 5){
         $("#message").text("Wow, you did great today!")
+        awesome.play()
       }
       else if(data.average >= 4){
         $("#message").text("Good work, your students seem very satisified")
+        awesome.play()
       }
       else if(data.average >=3){
         $("#message").text("You did okay today, could be better")
+        okay.play()
       }
       else if(data.average >=2){
         $("#message").text("you kinda sucked today...")
+        terrible.play()
       }
       else{
         $("#message").text("Wow, you REALLY sucked today")
+        terrible.play()
       }
     });
      function reset(){
