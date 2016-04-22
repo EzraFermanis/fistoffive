@@ -26,8 +26,8 @@ io.on('connection', function (socket) {
       total += votes[i];
       }
     var avg = total / votes.length
-    console.log(avg)
-    io.emit('result', {average: avg, votes: votes.length})
+    var roundedAverage = Math.round(avg * 10)/10
+    io.emit('result', {average: roundedAverage, votes: votes.length})
   });
   socket.on('my other event', function (data) {
     console.log(data);
