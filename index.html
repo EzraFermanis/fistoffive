@@ -39,12 +39,13 @@
         </div>
         <div class="row">
           <div class="six columns">
-
-            <div id="one" class="finger" onClick="execute(1)"></div>
-            <div id="two" class="finger" onClick="execute(2)"></div>
-            <div id="three" class="finger" onClick="execute(3)"></div>
-            <div id="four" class="finger" onClick="execute(4)"></div>
-            <div id="five" class="finger" onClick="execute(5)"></div>
+            <div id="fingers">
+              <div id="one" class="finger" onClick="execute(1)"></div>
+              <div id="two" class="finger" onClick="execute(2)"></div>
+              <div id="three" class="finger" onClick="execute(3)"></div>
+              <div id="four" class="finger" onClick="execute(4)"></div>
+              <div id="five" class="finger" onClick="execute(5)"></div>
+            </div>
           </div>
           <div class="six columns">
             <div id = "votes"># Votes: 0</div>
@@ -53,14 +54,28 @@
         </div>
       </div>
   </div>
+  <audio id='yeah'>
+    <source src='sounds/yeah.wav' type='audio/wav'>
+  </audio>
+    <audio id='sarcastic'>
+    <source src='sounds/sarcastic.wav' type='audio/wav'>
+  </audio>
   <script>
   var canVote = true
-
+  var yeah = document.getElementById('yeah')
+  var sarcastic = document.getElementById('sarcastic')
     var socket = io.connect('/');
     function execute(number){
       // console.log("we made it!", number)
       if(canVote){
+        if (number > 2){
+         yeah.play()
+        } else {
+          sarcastic.play()
+        }
+
         socket.emit("vote",number)
+        document.getElementById('fingers').innerHTML= '<h2>Thanks for voting!</h2>'
         canVote = false
       }
     }
@@ -73,5 +88,6 @@
       socket.emit("reset")
      }
   </script>
+
 </body>
 </html>
