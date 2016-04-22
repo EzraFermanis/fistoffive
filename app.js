@@ -32,6 +32,9 @@ io.on('connection', function (socket) {
   socket.on('my other event', function (data) {
     console.log(data);
   });
+  socket.on("reset",function(data){
+    votes = []
+  })
 });
 
 module.exports = app

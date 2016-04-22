@@ -6,6 +6,10 @@
   max-width: 25%;
 }
 
+html{
+  background-color: #7E8F7C;
+}
+
 .main {
   /*background-image: url('/images/palm.png');*/
   background-size: contain;

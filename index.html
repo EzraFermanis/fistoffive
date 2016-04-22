@@ -34,6 +34,7 @@
       <div class="main">
         <div class="row">
           <div class="six columns">
+            <h3>How was your learning today?</h3>
             <div id="one" class="finger" onClick="execute(1)"></div>
             <div id="two" class="finger" onClick="execute(2)"></div>
             <div id="three" class="finger" onClick="execute(3)"></div>
@@ -48,16 +49,24 @@
       </div>
   </div>
   <script>
+  var canVote = true
+
     var socket = io.connect('/');
     function execute(number){
       // console.log("we made it!", number)
-      socket.emit("vote",number)
+      if(canVote){
+        socket.emit("vote",number)
+        canVote = false
+      }
     }
      socket.on('result', function (data) {
         console.log(data.average);
         $("#votes").text("# Votes: " + data.votes)
         $("#average").text("Average: " + data.average)
       });
+     function reset(){
+      socket.emit("reset")
+     }
   </script>
 </body>
 </html>
