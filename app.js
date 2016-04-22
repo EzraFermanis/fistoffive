@@ -1,6 +1,5 @@
 var express = require('express')
-
-var app = require('express')();
+var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
@@ -8,7 +7,7 @@ var io = require('socket.io')(server);
 var votes = [];
 
 app.use(express.static('public'));
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
 
 app.get('/', function (req, res) {
   res.sendfile(__dirname + '/index.html');
@@ -28,7 +27,7 @@ io.on('connection', function (socket) {
       }
     var avg = total / votes.length
     console.log(avg)
-    io.emit('result', avg)
+    io.emit('result', {average: avg, votes: votes.length})
   });
   socket.on('my other event', function (data) {
     console.log(data);
@@ -36,3 +35,4 @@ io.on('connection', function (socket) {
 });
 
 
+module.exports = app
