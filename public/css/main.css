@@ -1,7 +1,10 @@
+html {
+  background-color: #7e8f7c
+}
+
 #votes,#average{
   background: #3f3f3f;
   padding: 20px;
-  /*height: 5em;*/
   margin-top: 5%;
   max-width: 25%;
 }
