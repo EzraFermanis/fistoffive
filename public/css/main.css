@@ -1,23 +1,37 @@
-html {
-  background-color: #7e8f7c
-}
-
 #votes,#average{
-  background: #3f3f3f;
+  background: #d9d9d9;
   padding: 20px;
   margin-top: 5%;
   max-width: 25%;
+   margin: auto;
+    width: 70%;
+    border: 3px solid #999999;
+    padding: 20px;
+    text-align: center;
 }
 
+body {
+    background-color:#e6e6e6
+}
 .main {
-  /*background-image: url('/images/palm.png');*/
   background-size: contain;
   background-repeat: no-repeat;
   flex-direction: column;
+  background-color: #e6e6e6;
+  margin: auto;
+    width: 60%;
+    border: 3px solid #999999;
+    padding: 10px;
 }
 
 h1 {
  text-align: center;
+}
+
+.finger {
+    margin: auto;
+    width: 60%;
+    padding: 20px;
 }
 
 #one {
