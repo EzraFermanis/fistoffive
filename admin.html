@@ -48,7 +48,7 @@
   var terrible = new Audio("sounds/numbnuts.mp3")
   var okay = new Audio("sounds/Tadaah.mp3")
   var awesome = new Audio("sounds/Woohoo.mp3")
-  var socket = io.connect('/admin');
+  var socket = io.connect('/');
   socket.on('result', function (data) {
     console.log(data.average);
     $("#votes").text("Number of votes: " + data.votes)
