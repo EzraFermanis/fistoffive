@@ -1,13 +1,12 @@
+html {
+  background-color: #7e8f7c
+}
+
 #votes,#average{
   background: #3f3f3f;
   padding: 20px;
-  /*height: 5em;*/
   margin-top: 5%;
   max-width: 25%;
-}
-
-html{
-  background-color: #7E8F7C;
 }
 
 .main {
@@ -17,7 +16,9 @@ html{
   flex-direction: column;
 }
 
-
+h1 {
+ text-align: center;
+}
 
 #one {
   background-image: url('/images/one.png');
