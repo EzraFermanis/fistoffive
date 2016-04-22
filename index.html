@@ -58,13 +58,9 @@
   <audio id='yeah'>
     <source src='sounds/yeah.wav' type='audio/wav'>
   </audio>
-    <audio id='sarcastic'>
-    <source src='sounds/sarcastic.wav' type='audio/wav'>
-  </audio>
   <script>
   var canVote = true
   var yeah = document.getElementById('yeah')
-  var sarcastic = document.getElementById('sarcastic')
     var socket = io.connect('/');
     function execute(number){
       // console.log("we made it!", number)
@@ -72,7 +68,7 @@
         if (number > 2){
          yeah.play()
         } else {
-          sarcastic.play()
+          yeah.play()
         }
 
         socket.emit("vote",number)
