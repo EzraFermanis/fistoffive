@@ -14,9 +14,9 @@
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="normalize.css">
-  <link rel="stylesheet" href="skeleton.css">
-  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/main.css">
 
 
   <script src="/socket.io/socket.io.js"></script>
@@ -33,14 +33,16 @@
     </div>
       <div class="main">
         <div class="row">
-          <div class="twelve columns">
+          <div class="six columns">
             <div id="one" class="finger" onClick="execute(1)"></div>
             <div id="two" class="finger" onClick="execute(2)"></div>
             <div id="three" class="finger" onClick="execute(3)"></div>
             <div id="four" class="finger" onClick="execute(4)"></div>
             <div id="five" class="finger" onClick="execute(5)"></div>
-            <div id = "votes"></div>
-            <div id = "average"></div>
+          </div>
+          <div class="six columns">
+            <div id = "votes"># Votes: 0</div>
+            <div id = "average">Average: 0</div>
           </div>
         </div>
       </div>
@@ -53,7 +55,7 @@
     }
      socket.on('result', function (data) {
         console.log(data.average);
-        $("#votes").text("Number of votes: " + data.votes)
+        $("#votes").text("# Votes: " + data.votes)
         $("#average").text("Average: " + data.average)
       });
   </script>
