@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'master_of_break'; /*a name to be used later*/
+    src: url('../fonts/master_of_break.ttf'); /*URL to font*/
+}
 #votes,#average{
   background: #d9d9d9;
   padding: 20px;
@@ -11,7 +15,7 @@
 }
 
 body {
-    background-color:#e6e6e6
+    background-color:#d6d6d6
 }
 .main {
   background-size: contain;
@@ -26,6 +30,9 @@ body {
 
 h1 {
  text-align: center;
+ font-family: master_of_break;
+ font-size: %100
+
 }
 
 .finger {
